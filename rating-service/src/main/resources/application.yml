@@ -1,0 +1,17 @@
+server:
+  port: 8091
+spring:
+  application:
+    name: rating
+  data:
+    mongodb:
+      authentication-database: admin
+      username: rootuser
+      password: rootpass
+      port: 27017
+      host: localhost
+      database: ratingservice
+
+
+
+
