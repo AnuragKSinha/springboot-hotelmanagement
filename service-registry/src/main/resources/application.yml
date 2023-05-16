@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: service-registry
+server:
+  port: 8761
+eureka:
+  client:
+    register-with-eureka: false
+    #this will avoid registering itself with any other or with itself
+    fetch-registry: false
+    #this will avoid fetching registry as it itself has the registry
+  instance:
+    hostname: localhost
