@@ -8,6 +8,7 @@ import io.anuragksinha.rating.service.rating.service.services.RatingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -35,6 +36,11 @@ public class RatingController {
 	@GetMapping("/hotels/{hotelId}")
 	public ResponseEntity<List<Rating>> getAllRatingByHotelId(@PathVariable String hotelId){
 		return ResponseEntity.ok(service.getRatingByHotelId(hotelId));
+	}
+	@DeleteMapping("/hotels/{hotelId}")
+	public ResponseEntity deleteById(@PathVariable String hotelId){
+		service.deleteById(hotelId);
+		return ResponseEntity.status(HttpStatus.OK).build();
 	}
 
 }

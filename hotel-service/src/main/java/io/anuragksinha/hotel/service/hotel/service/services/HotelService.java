@@ -8,4 +8,5 @@ public interface HotelService {
 	public Hotel create(Hotel hotel);
 	public List<Hotel> getAllHotels();
 	public Hotel getHotelById(String id);
+	public void deleteHotelById(String id);
 }
